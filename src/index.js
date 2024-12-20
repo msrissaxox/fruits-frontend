@@ -38,7 +38,7 @@ function getFruitInfo() {
 
   // Do something with the input value
   // Do something with the input value (API call)
-  fetch(`http://localhost:3001/api/fruit/${singularFruit}`)
+  fetch(`https://fruits-backend-d7q9.onrender.com/api/fruit/${singularFruit}`)
     .then((response) => response.json())
     .then((data) => {
       console.log("data:", data);
@@ -57,7 +57,7 @@ function getFruitInfo() {
 
       //Second API call to PixaBay
       //Get API Key first
-      return fetch("http://localhost:3001/api/pixabay-key")
+      return fetch("https://fruits-backend-d7q9.onrender.com/api/pixabay-key")
         .then((response) => response.json())
         .then((keyData) => {
           return fetch(
