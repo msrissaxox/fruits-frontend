@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fruit Finder</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="input.css" />
+    <link rel="stylesheet" href="output.css" />
+  </head>
+  <body>
+    <div class="mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl">
+      <h1
+        class="text-center mb-4 text-4xl font-poiret leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white"
+      >
+        Fruit Finder
+      </h1>
+      <p
+        class="mb-6 text-lg font-poiret lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400"
+      >
+        Learn about your favorite fruits!
+      </p>
+      <div
+        class="relative flex h-10 w-full min-w-[200px] max-w-[24rem] mx-auto"
+      >
+        <button
+          class="!absolute right-1 top-1 z-10 select-none rounded bg-indigo-500 py-2 px-4 text-center align-middle font-poiret text-xs uppercase text-white shadow-md shadow-indigo-500 transition-all hover:shadow-lg hover:shadow-indigo-500 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none peer-placeholder-shown:pointer-events-none peer-placeholder-shown:bg-blue-gray-500 peer-placeholder-shown:opacity-50 peer-placeholder-shown:shadow-none"
+          type="button"
+          data-ripple-light="true"
+        >
+          click
+        </button>
+        <input
+          type="text"
+          class="peer h-full w-full rounded-[7px] border border-blue-gray-200 bg-transparent px-3 py-2.5 pr-20 font-poiret text-sm text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+          placeholder="Enter name of fruit"
+          id="nameOfFruit"
+          required
+        />
+      </div>
+
+      <h4
+        class="mt-2 text-2xl leading-8 text-gray-900 sm:text-3xl sm:leading-9"
+      >
+        <p class="font-poiret" id="fruitNameInputted"></p>
+
+        <img id="image" src="" />
+        <!--Family-->
+        <div class="flex gap-2 font-poiret">
+          <p>Family: &nbsp;</p>
+          <p id="family" class="font-poiret"></p>
+        </div>
+
+        <!--Order-->
+        <div class="flex gap-2 font-poiret">
+          <p>Order: &nbsp;</p>
+          <p id="order" class="font-poiret"></p>
+        </div>
+
+        <!--Genus-->
+        <div class="flex gap-2 font-poiret">
+          <p>Genus: &nbsp;</p>
+          <p id="genus" class="font-poiret"></p>
+        </div>
+      </h4>
+
+      <ul class="mt-8 space-y-3 font-poiret">
+        <li class="flex items-start lg:col-span-1">
+          <div class="flex-shrink-0">
+            <svg
+              class="w-5 h-5 text-indigo-600"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </div>
+          <p class="ml-3 leading-5 text-gray-600">Calories: &nbsp;</p>
+          <p id="calories"></p>
+        </li>
+        <li class="flex items-start lg:col-span-1">
+          <div class="flex-shrink-0">
+            <svg
+              class="w-5 h-5 text-indigo-600"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </div>
+          <p class="ml-3 leading-5 text-gray-600">Fats: &nbsp;</p>
+          <p id="fats"></p>
+        </li>
+        <li class="flex items-start lg:col-span-1">
+          <div class="flex-shrink-0">
+            <svg
+              class="w-5 h-5 text-indigo-600"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </div>
+          <p class="ml-3 leading-5 text-gray-600">Sugars: &nbsp;</p>
+          <p id="sugars"></p>
+        </li>
+        <li class="flex items-start lg:col-span-1">
+          <div class="flex-shrink-0">
+            <svg
+              class="w-5 h-5 text-indigo-600"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </div>
+          <p class="ml-3 leading-5 text-gray-600">Carbohydrates: &nbsp;</p>
+          <p id="carbs"></p>
+        </li>
+
+        <li class="flex items-start lg:col-span-1">
+          <div class="flex-shrink-0">
+            <svg
+              class="w-5 h-5 text-indigo-600"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </div>
+          <p class="ml-3 leading-5 text-gray-600">Protein: &nbsp;</p>
+          <p id="protein"></p>
+        </li>
+      </ul>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

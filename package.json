@@ -1,0 +1,12 @@
+{
+  "name": "fruit-frontend",
+  "version": "1.0.0",
+  "description": "An interactive web application that provides detailed information about fruits, including nutritional data and images. This app combines data from the Fruityvice API for fruit information and Pixabay API for fruit images.",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
