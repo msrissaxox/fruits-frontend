@@ -43,7 +43,11 @@ function getFruitInfo() {
     .then((data) => {
       console.log("data:", data);
       // Optional: do something with the data
-      fruitNameInputted.textContent = `Fruit: ${inputValue}`;
+      function capitalizeFirstLetter(val) {
+        return val.charAt(0).toUpperCase() + val.slice(1);
+    }
+    
+      fruitNameInputted.textContent = `Fruit: ${capitalizeFirstLetter(inputValue)}`;
       family.textContent = `${data.family}`;
       order.textContent = `${data.order}`;
       genus.textContent = `${data.genus}`;

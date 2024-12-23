@@ -33,7 +33,8 @@ An interactive web application that provides detailed information about fruits, 
   - Fruityvice API for fruit data
   - Pixabay API for images
 - **Deployment**: 
-  - Vercel
+  - Vercel - Front End
+  - Render - Back End
 
 ## Installation
 
