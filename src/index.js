@@ -39,14 +39,19 @@ function getFruitInfo() {
   // Do something with the input value
   // Do something with the input value (API call)
   fetch(`https://fruits-backend-d7q9.onrender.com/api/fruit/${singularFruit}`)
-    .then((response) => response.json())
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Fruit not found");
+      }
+      return response.json();
+    })
     .then((data) => {
-      console.log("data:", data);
+      // console.log("data:", data);
       // Optional: do something with the data
       function capitalizeFirstLetter(val) {
         return val.charAt(0).toUpperCase() + val.slice(1);
-    }
-    
+      }
+
       fruitNameInputted.textContent = `Fruit: ${capitalizeFirstLetter(inputValue)}`;
       family.textContent = `${data.family}`;
       order.textContent = `${data.order}`;
@@ -61,32 +66,46 @@ function getFruitInfo() {
 
       //Second API call to PixaBay
       //Get API Key first
+
       return fetch("https://fruits-backend-d7q9.onrender.com/api/pixabay-key")
         .then((response) => response.json())
         .then((keyData) => {
           return fetch(
-            `https://pixabay.com/api/?key=${keyData.apiKey}&q=${inputValue}&image_type=photo`
+            `https://pixabay.com/api/?key=${keyData.apiKey}&q=${inputValue}&image_type=photo`,
           );
         })
         .then((pixabayResponse) => pixabayResponse.json())
         .then((pixabayData) => {
-          console.log("Pixabay data:", pixabayData);
+          // console.log("Pixabay data:", pixabayData);
           if (pixabayData.hits && pixabayData.hits.length > 0) {
             // Example: Set an image source (assuming you have an img element)
 
             fruitImage.src = pixabayData.hits[0].webformatURL;
-            console.log(fruitImage);
           }
         });
     })
 
-    .catch((error) => console.error("Error:", error));
+    .catch((error) => {
+      console.error("Error:", error);
+
+      // Clear the screen on error
+      fruitNameInputted.textContent = "";
+      family.textContent = "";
+      order.textContent = "";
+      genus.textContent = "";
+
+      calories.textContent = "";
+      fats.textContent = "";
+      sugars.textContent = "";
+      carbs.textContent = "";
+      protein.textContent = "";
+
+      fruitImage.src = "";
+    });
 
   // Clear the input field
   fruitInput.value = "";
-  fruitImage.src = "";
 }
-
 // Add event listener to the button
 fruitButton.addEventListener("click", function () {
   getFruitInfo();
