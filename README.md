@@ -3,7 +3,8 @@
 # 🍎 Fruit Finder
 ## Live Site
 <a href="https://fruits-frontend-rose.vercel.app/" target="_blank"> Fruit Finder</a>
-<br>
+
+
 An interactive web application that provides detailed information about fruits, including nutritional data and images. This app combines data from the Fruityvice API for fruit information and Pixabay API for fruit images.
 
 ## ✨ Features
